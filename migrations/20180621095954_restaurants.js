@@ -10,6 +10,8 @@ exports.up = (knex, Promise) => {
     table.string('city')
     table.string('country')
     table.string('suburb')
+    table.string('google_url')
+    table.string('website')
   }
 
   )
