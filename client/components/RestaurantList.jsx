@@ -1,7 +1,7 @@
 import React from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 
-class App extends React.Component {
+class RestaurantList extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -9,7 +9,7 @@ class App extends React.Component {
       currentRestaurants: ['Depot', 'Masu']
     }
     this.addRestaurant = this.addRestaurant.bind(this)
-    this.updateNewRes = this.updateNewRes.bind(this) 
+    this.updateNewRes = this.updateNewRes.bind(this)
   }
 
   addRestaurant () {
@@ -26,16 +26,15 @@ class App extends React.Component {
 
   render () {
     return (
-      <Router>
-        <div>
-          <h2>Restaurant List</h2>
-          <input type="text" name="restaurant" onChange={this.updateNewRes}/>
-          <button onClick={this.addRestaurant}>Add</button>
-        </div>
+      <div>
+        <h2>Restaurant List</h2>
+        <input type="text" name="restaurant" onChange={this.updateNewRes}/>
+        <button onClick={this.addRestaurant}>Add</button>
+        <h2>List</h2>
 
-      </Router>
+      </div>
     )
   }
 }
 
-export default App
+export default RestaurantList
