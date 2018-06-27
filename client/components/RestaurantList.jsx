@@ -41,8 +41,6 @@ class RestaurantList extends React.Component {
   render () {
     return (
       <div>
-        <input type="text" name="restaurant" onChange={this.updateNewRes}/>
-        <button onClick={this.addRestaurant}>Add</button>
         <h2>List</h2>
         {
           this.state.currentRestaurants.map((res, i) => {
