@@ -1,5 +1,4 @@
 import React from 'react'
-import {HashRouter as Router, Route, Link} from 'react-router-dom'
 
 const Restaurant = props => {
   return <div>

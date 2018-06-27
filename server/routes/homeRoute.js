@@ -6,4 +6,6 @@ router.get('/', (req, res) => {
   res.send('all systems go')
 })
 
+router.post
+
 module.exports = router

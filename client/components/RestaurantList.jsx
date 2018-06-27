@@ -1,5 +1,5 @@
 import React from 'react'
-import {HashRouter as Router, Route, Link} from 'react-router-dom'
+import Restaurant from './Restaurant'
 
 class RestaurantList extends React.Component {
   constructor (props) {
@@ -27,10 +27,16 @@ class RestaurantList extends React.Component {
   render () {
     return (
       <div>
-        <h2>Restaurant List</h2>
         <input type="text" name="restaurant" onChange={this.updateNewRes}/>
         <button onClick={this.addRestaurant}>Add</button>
         <h2>List</h2>
+        {
+          this.state.currentRestaurants.map((res, i) => {
+            return (
+              <Restaurant key={i} name={res}/>
+            )
+          })
+        }
 
       </div>
     )

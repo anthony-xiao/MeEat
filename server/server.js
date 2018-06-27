@@ -1,6 +1,6 @@
 const path = require('path')
 const express = require('express')
-const homeRoutes = require('../routes/homeRoute')
+const homeRoutes = require('./routes/homeRoute')
 const bodyParser = require('body-parser')
 
 const server = express()
