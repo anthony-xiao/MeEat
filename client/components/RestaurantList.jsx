@@ -1,5 +1,6 @@
 import React from 'react'
 import Restaurant from './Restaurant'
+import {allRest} from '../api/apiClient'
 
 class RestaurantList extends React.Component {
   constructor (props) {
@@ -22,6 +23,19 @@ class RestaurantList extends React.Component {
     this.setState({
       newRestaurant: e.target.value
     })
+  }
+
+  componentDidMount () {
+    allRest()
+      .then(rest => {
+        const names = rest.rest.map(res => {
+          return res.name
+        })
+        this.setState({
+          currentRestaurants: names
+        })
+      }
+      )
   }
 
   render () {
