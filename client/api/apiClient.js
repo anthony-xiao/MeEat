@@ -12,13 +12,13 @@ export function allRest () {
     })
 }
 
-export function newRest (Rest) {
+export function newRest (rest) {
+  console.log(rest)
   return request
     .post('/api/v1/restaurants/')
-    .send(Rest)
+    .send(rest)
     .catch(err => {
       // eslint-disable-next-line no-console
       console.error(err)
     })
 }
-

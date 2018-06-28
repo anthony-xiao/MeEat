@@ -6,11 +6,12 @@ class main extends React.Component {
     super(props)
     this.state = {
       name: '',
-      city: '',
-      rating: 0
+      city: ''
     }
     this.addRestaurant = this.addRestaurant.bind(this)
-    this.updateNewRes = this.updateNewRes.bind(this)
+    this.newName = this.newName.bind(this)
+    this.newCity = this.newCity.bind(this)
+    this.postNewRes = this.postNewRes.bind(this)
   }
 
   addRestaurant () {
@@ -19,25 +20,29 @@ class main extends React.Component {
     })
   }
 
-  updateNewRes (e) {
+  newName (e) {
     this.setState({
-      name: e.target.name,
-      city: e.target.value,
-      rating: e.target.value
-
+      name: e.target.value
     })
-    console.log(this.state.newRestaurant)
+  }
+
+  newCity (e) {
+    this.setState({
+      city: e.target.value
+    })
+  }
+
+  postNewRes () {
+    newRest(this.state)
   }
 
   render () {
     return (
       <div>
-        Name: <input type="text" name="restaurant" onChange={this.updateNewRes}/>
-        City: <input type="text" name="city" onChange={this.updateNewRes}/>
-        Rating: <input type="text" name="personal_rating" onChange={this.updateNewRes}/>
-        <button type="submit">Add</button>
+        Name: <input type="text" name="restaurant" onChange={this.newName}/>
+        City: <input type="text" name="city" onChange={this.newCity}/>
+        <button type="submit" onClick={this.postNewRes}>Add</button>
         <div>
-          {this.state.newRestaurant}
         </div>
       </div>
     )
