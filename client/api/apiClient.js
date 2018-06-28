@@ -22,6 +22,3 @@ export function newRest (Rest) {
     })
 }
 
-
-
-

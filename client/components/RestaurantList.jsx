@@ -6,7 +6,6 @@ class RestaurantList extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      newRestaurant: '',
       currentRestaurants: ['Depot', 'Masu']
     }
   }

@@ -1,11 +1,13 @@
 import React from 'react'
+import {newRest} from '../api/apiClient'
 
 class main extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      newRestaurant: '',
-      currentRestaurants: ['Depot', 'Masu']
+      name: '',
+      city: '',
+      rating: 0
     }
     this.addRestaurant = this.addRestaurant.bind(this)
     this.updateNewRes = this.updateNewRes.bind(this)
@@ -19,17 +21,24 @@ class main extends React.Component {
 
   updateNewRes (e) {
     this.setState({
-      newRestaurant: e.target.value
-    })
-  }
+      name: e.target.name,
+      city: e.target.value,
+      rating: e.target.value
 
-  
+    })
+    console.log(this.state.newRestaurant)
+  }
 
   render () {
     return (
       <div>
-        <input type="text" name="restaurant" onChange={this.updateNewRes}/>
-        <button onClick={this.addRestaurant}>Add</button>
+        Name: <input type="text" name="restaurant" onChange={this.updateNewRes}/>
+        City: <input type="text" name="city" onChange={this.updateNewRes}/>
+        Rating: <input type="text" name="personal_rating" onChange={this.updateNewRes}/>
+        <button type="submit">Add</button>
+        <div>
+          {this.state.newRestaurant}
+        </div>
       </div>
     )
   }
