@@ -4,7 +4,7 @@ const db = require('../db/db')
 const router = express.Router()
 router.use(express.json())
 
-router.get('/', (req, res) => {
+router.get('/RestaurantsList', (req, res) => {
   db.allRest()
     .then(rest => {
       res.json({rest})
@@ -16,12 +16,12 @@ router.get('/', (req, res) => {
     })
 })
 
-router.get('/:id', (req, res) => {
-  const id = req.params.id
-  db.getRest(id)
-    .then(rest => {
-      console.log(rest)
-      res.json({rest})
+router.post('/', (req, res) => {
+  const rest = req.body
+  console.log(rest)
+  db.newRest(rest)
+    .then(() => {
+      res.status(200).end()
     })
     .catch(err => {
       // eslint-disable-next-line no-console

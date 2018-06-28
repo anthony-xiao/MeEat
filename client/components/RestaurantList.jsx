@@ -9,20 +9,6 @@ class RestaurantList extends React.Component {
       newRestaurant: '',
       currentRestaurants: ['Depot', 'Masu']
     }
-    this.addRestaurant = this.addRestaurant.bind(this)
-    this.updateNewRes = this.updateNewRes.bind(this)
-  }
-
-  addRestaurant () {
-    this.setState({
-      currentRestaurants: [...this.state.currentRestaurants, this.state.newRestaurant]
-    })
-  }
-
-  updateNewRes (e) {
-    this.setState({
-      newRestaurant: e.target.value
-    })
   }
 
   componentDidMount () {
@@ -49,7 +35,6 @@ class RestaurantList extends React.Component {
             )
           })
         }
-
       </div>
     )
   }
